@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yondatter（ヨンダッター）</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <p class="logo">Yondatter</p>
+    <button id="menu-button" class="menu-button" type="button" aria-label="メニュー開閉">☰</button>
+    <nav id="drawer" class="drawer">
+      <ul>
+        <li><a href="#current">いま読んでいる本</a></li>
+        <li><a href="#register">次に読む本を登録</a></li>
+        <li><a href="#shelf">本棚</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section id="current" class="card">
+      <h2>いま読んでいる本</h2>
+      <p id="current-title" class="current-title"></p>
+      <p id="current-author" class="current-author"></p>
+      <p id="current-genre" class="current-genre"></p>
+      <div class="pages">
+        <button id="minus-button" class="pages-button" type="button">−10</button>
+        <p id="current-pages" class="current-pages"></p>
+        <button id="plus-button" class="pages-button" type="button">＋10</button>
+      </div>
+
+      <div class="form">
+        <label>評価
+          <span class="rating">
+            <select id="rating-select">
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3" selected>3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+            <span id="rating-stars" class="rating-stars">★★★☆☆</span>
+          </span>
+        </label>
+        <label>感想<textarea id="memo-input" rows="4"></textarea></label>
+        <button id="finish-button" class="main-button" type="button">読み終えた</button>
+      </div>
+    </section>
+
+    <section id="register" class="card">
+      <h2>次に読む本を登録</h2>
+      <div class="form">
+        <label>書名<input id="title-input" type="text"></label>
+        <label>著者<input id="author-input" type="text"></label>
+        <label>ページ数<input id="pages-input" type="number" min="1"></label>
+        <label>ジャンル<select id="genre-select"></select></label>
+        <button id="register-button" class="main-button" type="button">登録</button>
+      </div>
+    </section>
+
+    <section id="shelf" class="card">
+      <h2>本棚</h2>
+      <ul id="book-list" class="book-list"></ul>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
